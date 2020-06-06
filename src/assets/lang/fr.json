@@ -26,12 +26,12 @@
                     "message": "Vous n'avez pas de liste de favoris en ce moment. Veuillez en ajouter un au moins"
                 },
                 "favList": {
-                    "title": "Liste des villes préférées",
+                    "title": "Liste des favoris",
                     "message": "Veuillez choisir une ville"
                 }
             },
             "heartPopup": {
-                "title": "Ajouter aux villes préférées",
+                "title": "Ajouter aux favoris",
                 "message": "Vous êtes sur le point d'ajouter \"{city}\" à votre liste de favoris"
             },
             "errorMsg": {

@@ -62,7 +62,7 @@ export default {
     journey () {
       this.time = new Date().getHours()
       return (this.time >= 21 || this.time < 4) ? 'dark' : 'light'
-      //return 'light'  /** To test dark mode */
+      //return 'dark'  /** To test dark mode */
     }
   },
   methods: {
