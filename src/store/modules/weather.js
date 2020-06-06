@@ -1,6 +1,6 @@
 
 const state = () => ({
-  ste: '',
+  ctr: '',
   city: '',
   userCredentials: {
     api_key: 'fbad7115580b97abe40824796e9e4f15',
@@ -22,9 +22,9 @@ const getters = {
 }
 
 const mutations = {
-  fetchWeather (state, { data, ste, city }) {
+  fetchWeather (state, { data, ctr, city }) {
     if (data.cod === 200) {
-      state.ste = ste
+      state.ctr = ctr
       state.city = city
       state.currentWeather = data
       state.minDailyWeather = []
@@ -54,8 +54,8 @@ const mutations = {
 }
 
 const actions = {
-  fetchDailyWeather ({ commit }, { path, state, city, apiKey }) {
-    fetch(`${path}forecast?q=${city}${state ? `,${state}` : ''}&units=imperial&APPID=${apiKey}`)
+  fetchDailyWeather ({ commit }, { path, country, city, apiKey }) {
+    fetch(`${path}forecast?q=${city}${country ? `,${country}` : ''}&units=imperial&APPID=${apiKey}`)
       .then(res => {
         return res.json()
       })
@@ -83,14 +83,14 @@ const actions = {
         commit('errorOccured', true)
       })
   },
-  fetchWeather ({ commit, dispatch, getters }, { state, city }) {
-    fetch(`${getters.getUserCredentials().path}weather?q=${city}${state ? `,${state}` : ''}&units=imperial&APPID=${getters.getUserCredentials().api_key}`)
+  fetchWeather ({ commit, dispatch, getters }, { country, city }) {
+    fetch(`${getters.getUserCredentials().path}weather?q=${city}${country ? `,${country}` : ''}&units=imperial&APPID=${getters.getUserCredentials().api_key}`)
       .then(res => {
         return res.json()
       })
       .then(res => {
-        commit('fetchWeather', { data: res, ste: state, city: city })
-        dispatch('fetchDailyWeather', { path: getters.getUserCredentials().path, state: state, city: city, apiKey: getters.getUserCredentials().api_key })
+        commit('fetchWeather', { data: res, ctr: country, city: city })
+        dispatch('fetchDailyWeather', { path: getters.getUserCredentials().path, country: country, city: city, apiKey: getters.getUserCredentials().api_key })
       })
       .catch(() => {
         commit('errorOccured', true)
@@ -108,8 +108,8 @@ const actions = {
           .then(res => {
             return res.json()
           }).then(res => {
-            commit('fetchWeather', { data: res, ste: null, city: null })
-            dispatch('fetchDailyWeather', { path: getters.getUserCredentials().path, state: res.sys.country.toLowerCase(), city: res.name, apiKey: getters.getUserCredentials().api_key })
+            commit('fetchWeather', { data: res, ctr: null, city: null })
+            dispatch('fetchDailyWeather', { path: getters.getUserCredentials().path, country: res.sys.country.toLowerCase(), city: res.name, apiKey: getters.getUserCredentials().api_key })
           }).catch(error => {
             console.log(error)
           })

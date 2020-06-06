@@ -8,7 +8,7 @@
             "close": "close"
         },
         "header": {
-            "search": "city, state",
+            "search": "city, country",
             "currentLocation": "Use current location",
             "settings": {
                 "settings": "Settings",
@@ -18,7 +18,7 @@
                 }
             },
             "favorites": {
-                "alreadyExists": "City already exists",
+                "exists": "This city already exists in favorite list",
                 "add": "Add to favorite",
                 "fav": "Favorites",
                 "noFav": {
@@ -36,7 +36,7 @@
             },
             "errorMsg" : {
                 "title" : "Error",
-                "message": "An error was occured, please verify the city and the state values"
+                "message": "An error was occured, please verify the city and the country values"
             }
         },
         "currentTemp": {

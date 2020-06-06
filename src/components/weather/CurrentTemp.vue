@@ -3,8 +3,8 @@
     <div class="border-style col-5">
       <div class="d-flex">
         <skycon :condition="weatherCondition" :width="210" :height="210"> </skycon>
-        <div class="ml-3" :class="journey">
-          <div> {{ city ? city : currentWeather.name }} {{ state ? `, ${state}` : '' }} </div>
+        <div class="ml-3" style="margin: auto;" :class="journey">
+          <div> {{ city ? city : currentWeather.name }} {{ country ? `, ${country}` : `, ${codeCountry.default[currentWeather.sys.country]}` }} </div>
           <div> {{ $moment(new Date()).locale($i18n.locale).format("HH:mm") }} </div>
           <div class="display-3"> {{ unitTemperature === 'celsius' ? getCelsiusTemp(currentWeather.main.temp) : `${Math.trunc(currentWeather.main.temp)}°F` }} </div>
           <div>{{ $t(`app.currentTemp.dailyTemp.${_.camelCase(currentWeather.weather[0].description)}`) }} </div>
@@ -28,10 +28,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import * as codeCountry from '../../assets/json/alpha2CoutryCodes.json'
 
 export default {
   data () {
-    return {}
+    return {
+      codeCountry: codeCountry
+    }
   },
   props: {
     journey: {
@@ -46,7 +49,7 @@ export default {
   computed: {
     ...mapState({
       currentWeather: state => state.weather.currentWeather,
-      state: state => state.weather.ste,
+      country: state => state.weather.ctr,
       city: state => state.weather.city,
       unitTemperature: state => state.weather.unitTemperature
     })

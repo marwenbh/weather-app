@@ -103,7 +103,7 @@
           </v-btn>
         </template>
         <span v-if="favoriteCities.cities.indexOf(currentWeather.name) === -1"> {{ $t('app.header.favorites.add') }} </span>
-        <span v-else> {{ $t('app.header.favorites.alreadyExists') }} </span>
+        <span v-else> {{ $t('app.header.favorites.exists') }} </span>
       </v-tooltip>
       <SelectLocale></SelectLocale>
     </v-app-bar>
@@ -122,7 +122,7 @@ export default {
   data () {
     return {
       city: '',
-      state: '',
+      country: '',
       items: [{ id: 'fav', title: 'favorites' }, { id: 'settings', title: 'settings' }],
       search: '',
       isValid: false,
@@ -154,16 +154,16 @@ export default {
       if (event.key === 'Enter' && this.isValid) { //   form is valid and user press Enter to search
         if (this.search.split(',').length === 2) {
           this.city = this.search.split(',')[0].trim()
-          this.state = this.search.split(',')[1].trim()
-          this.$store.dispatch('weather/fetchWeather', { state: this.state, city: this.city })
-          // this.search = ''
+          this.country = this.search.split(',')[1].trim()
+          this.$store.dispatch('weather/fetchWeather', { country: this.country, city: this.city })
+          this.search = ''
         }
       }
     },
     addToFavoriteList (event) {
       if (event) {
         this.favoritePopup = false
-        this.$store.commit('weather/addToFavoriteList', this.search === '' ? this.currentWeather.name : this.search.split(',')[0])
+        this.$store.commit('weather/addToFavoriteList', this.currentWeather.name)
       }
     },
     convertTemperature ($event) {
@@ -172,7 +172,7 @@ export default {
     },
     applyFavoriteCity ($event) {
       this.favPopup = false
-      this.$store.dispatch('weather/fetchWeather', { state: null, city: $event })
+      this.$store.dispatch('weather/fetchWeather', { country: null, city: $event })
     },
     chooseMenu (idItem) {
       switch (idItem) {

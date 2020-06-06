@@ -31,7 +31,11 @@
 
       <v-card-actions class="d-flex justify-end pa-4 pt-0">
         <!--cancel button -->
-        <v-btn v-if="rule !== 'error' && (!cities || cities.length !== 0)" text rounded @click="$emit('input', false)"> {{$t('app.actions.cancel')}} </v-btn>
+        <v-btn
+          v-if="rule !== 'error' && (!cities || cities.length !== 0)" text rounded @click="$emit('input', false)"
+        >
+          {{$t('app.actions.cancel')}}
+        </v-btn>
 
         <!--confirm button -->
         <v-btn
@@ -90,6 +94,9 @@ export default {
         return null
       }
     }
+  },
+  created () {
+    this.favCity = this.cities ? this.cities[0] : ''
   },
   computed: {
     journey () {
