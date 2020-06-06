@@ -4,9 +4,11 @@
         "socialNetworks": "Connectez-vous avec moi sur les réseaux sociaux!",
         "actions": {
             "confirm": "Confirmer",
-            "cancel": "Annuler"
+            "cancel": "Annuler",
+            "close": "fermer"
         },
         "header": {
+            "alreadyExists": "Ville existe déjà",
             "search": "ville, pays",
             "currentLocation": "Position actuelle",
             "settings": {

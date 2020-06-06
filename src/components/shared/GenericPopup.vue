@@ -31,15 +31,24 @@
 
       <v-card-actions class="d-flex justify-end pa-4 pt-0">
         <!--cancel button -->
-        <v-btn v-if="rule !== 'error'" text rounded @click="$emit('input', false)"> {{$t('app.actions.cancel')}} </v-btn>
+        <v-btn v-if="rule !== 'error' && (!cities || cities.length !== 0)" text rounded @click="$emit('input', false)"> {{$t('app.actions.cancel')}} </v-btn>
 
         <!--confirm button -->
         <v-btn
           class="px-5"
-          :dark="!cities || cities.length !== 0"
+          dark
+          :color="journey"
+          rounded
+          v-if="cities && cities.length === 0"
+          @click="$emit('input', false)"
+        > {{ $t('app.actions.close')}}
+        </v-btn>
+        <v-btn
+          class="px-5"
+          dark
           :color="rule === 'error' ? '#e1275f': journey"
           rounded
-          :disabled="rule === 'fav' && cities.length === 0"
+          v-else
           @click="rule === 'settings' ? $emit('confirm', unit) : rule === 'fav' ? $emit('confirm', favCity) : $emit('confirm', true)"
         >
           {{ rule == 'error' ? 'ok' : $t('app.actions.confirm') }}

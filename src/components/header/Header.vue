@@ -86,7 +86,7 @@
       </v-form>
 
       <div class="text-center w-50">
-          <v-toolbar-title > {{ $moment(new Date()).locale($i18n.locale).format("dddd, Do MMMM ") }} </v-toolbar-title>
+          <v-toolbar-title > {{ $moment(new Date()).locale($i18n.locale).format("dddd, Do MMMM YYYY") }} </v-toolbar-title>
       </div>
       <v-spacer></v-spacer>
       <v-tooltip left
@@ -94,10 +94,16 @@
       >
         <template v-slot:activator="{ on }">
           <v-btn v-on="on" icon>
-            <v-icon @click="favoritePopup = true">mdi-heart</v-icon>
+            <v-icon
+              @click="favoriteCities.cities.indexOf(currentWeather.name) === -1 ? favoritePopup = true : ''"
+              :style="[favoriteCities.cities.indexOf(currentWeather.name) === -1 ? '' : {'color': 'red'}]"
+            >
+              mdi-heart
+            </v-icon>
           </v-btn>
         </template>
-        <span> {{ $t('app.header.favorites.add') }} </span>
+        <span v-if="favoriteCities.cities.indexOf(currentWeather.name) === -1"> {{ $t('app.header.favorites.add') }} </span>
+        <span v-else> {{ $t('app.header.favorites.alreadyExists') }} </span>
       </v-tooltip>
       <SelectLocale></SelectLocale>
     </v-app-bar>

@@ -4,7 +4,8 @@
         "socialNetworks": "Get connected with me on social networks!",
         "actions": {
             "confirm": "confirm",
-            "cancel": "cancel"
+            "cancel": "cancel",
+            "close": "close"
         },
         "header": {
             "search": "city, state",
@@ -17,6 +18,7 @@
                 }
             },
             "favorites": {
+                "alreadyExists": "City already exists",
                 "add": "Add to favorite",
                 "fav": "Favorites",
                 "noFav": {
