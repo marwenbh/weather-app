@@ -26,7 +26,7 @@
             class="mx-4"
             dark
             icon
-            @click="redirect(icon.value)"
+            @click="redirect(icon.path)"
           >
             <v-icon size="24px">{{ icon.img }}</v-icon>
           </v-btn>
@@ -42,10 +42,10 @@
 export default {
   data: () => ({
     icons: [
-      { img: 'mdi-facebook', value: 'Facebook' },
-      { img: 'mdi-twitter', value: 'Twitter' },
-      { img: 'mdi-linkedin', value: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' },
-      { img: 'mdi-instagram', value: 'Instagram' }
+      { img: 'mdi-facebook', value: 'Facebook', path: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' },
+      { img: 'mdi-twitter', value: 'Twitter', path: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' },
+      { img: 'mdi-linkedin', value: 'LinkedIn', path: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' },
+      { img: 'mdi-instagram', value: 'Instagram', path: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' }
     ]
   }),
   methods: {
