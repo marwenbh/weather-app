@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     getCelsiusTemp (temp) {
-      return `${Math.trunc((parseInt(temp) - 32) * (5 / 9))}°`
+      return `${Math.round((parseInt(temp) - 32) * (5 / 9))}°`
     }
   }
 }

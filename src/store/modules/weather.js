@@ -93,7 +93,6 @@ const actions = {
         dispatch('fetchDailyWeather', { path: getters.getUserCredentials().path, state: state, city: city, apiKey: getters.getUserCredentials().api_key })
       })
       .catch(() => {
-        // console.log('FETCH: getters.getPreviousPosition():  ', getters.getPreviousPosition())
         commit('errorOccured', true)
       })
   },
