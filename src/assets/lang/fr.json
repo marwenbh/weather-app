@@ -1,0 +1,97 @@
+{
+    "app": {
+        "title": "Application de météo",
+        "socialNetworks": "Connectez-vous avec moi sur les réseaux sociaux!",
+        "actions": {
+            "confirm": "Confirmer",
+            "cancel": "Annuler"
+        },
+        "header": {
+            "search": "ville, pays",
+            "currentLocation": "Position actuelle",
+            "settings": {
+                "settings": "Paramètres",
+                "popup": {
+                    "title": "Unité température",
+                    "message": "Veuillez choisir une unité de température"
+                }
+            },
+            "favorites": {
+                "add": "Ajouter aux favoris",
+                "fav": "Favoris",
+                "noFav": {
+                    "title": "Villes préférées",
+                    "message": "Vous n'avez pas de liste de favoris en ce moment. Veuillez en ajouter un au moins"
+                },
+                "favList": {
+                    "title": "Liste des villes préférées",
+                    "message": "Veuillez choisir une ville"
+                }
+            },
+            "heartPopup": {
+                "title": "Ajouter aux villes préférées",
+                "message": "Vous êtes sur le point d'ajouter \"{city}\" à votre liste de favoris"
+            },
+            "errorMsg": {
+                "title" : "Erreur",
+                "message": "Une erreur est survenue, veuillez vérifier la ville et le pays"
+            }
+        },
+        "currentTemp": {
+            "humidity": "Humidité",
+            "windSpeed": "Vitesse du vent",
+            "dailyTemp": {
+                "thunderstormWithLight": "Orage avec lumière",
+                "thunderstormWithRain": "Orage avec pluie",
+                "thunderstormWithHeavyRain": "Orage avec forte pluie",
+                "lightThunderstorm": "Orage léger",
+                "thunderstorm": "Orage",
+                "heavyThunderstorm": "Orage fort",
+                "raggedThunderstorm": "Orage en lambeaux",
+                "thunderstormWithLightDrizzle": "Orage avec bruine légère",
+                "thunderstormWithDrizzle": "Orage avec bruine",
+                "thunderstormWithHeavyDrizzle": "Orage avec forte bruine",
+                "lightIntensityDrizzle": "Bruine d'intensité lumineuse",
+                "drizzle": "Bruine",
+                "heavyIntensityDrizzle": "Bruine de forte intensité",
+                "lightIntensityDrizzleRain": "Pluie fine",
+                "drizzleRain": "Bruine pluie",
+                "heavyIntensityDrizzleRain": "Pluie bruine de forte intensité",
+                "showerRainAndDrizzle": "Pluie et bruine sous la douche",
+                "heavyShowerRainAndDrizzle": "Pluie forte et bruine",
+                "showerDrizzle": "Shower drizzle",
+                "lightRain": "Pluis légère",
+                "moderateRain": "Pluie modérée",
+                "veryHeavyRain": "Pluie très forte",
+                "heavyIntensityRain": "Pluie de forte intensité",
+                "extremeRain": "Extreme rain",
+                "freezingRain": "Pluie verglaçante",
+                "lightIntensityShower": "Douche d'intensité lumineuse",
+                "showerRain": "Shower rain",
+                "heavyIntensityShowerRain": "Pluie de forte intensité",
+                "raggedShowerRain": "Pluie de pluie irrégulière",
+                "lightSnow": "Légère neige",
+                "snow": "Neige",
+                "heavySnow": "Heavy snow",
+                "sleet": "Sleet",
+                "lightShowerSleet": "Douche légère",
+                "showerSleet": "Douche de douche",
+                "lightRainAndSnow": "Faible pluie et neige",
+                "rainAndSnow": "Pluie et neige",
+                "lightShowerSnow": "Neige légère sous la pluie",
+                "showerSnow": "Douche neige",
+                "heavyShowerSnow": "fortes averses de neige",
+                "mist": "Brume",
+                "smoke": "fumée",
+                "haze": "Haze",
+                "fog": "Brouillard",
+                "sand": "Sable",
+                "clearSky": "Ciel clair",
+                "fewClouds": "Peu de nuages",
+                "scatteredClouds": "Nuages ​​épars",
+                "brokenClouds": "Nuages ​​cassés",
+                "overcastClouds": "Couvert nuages"
+            }
+        }
+    }
+}
