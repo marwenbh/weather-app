@@ -67,7 +67,7 @@
 export default {
   data () {
     return {
-      unit: 'celsius',
+      unit: this.$store.state.weather.unitTemperature,
       favCity: ''
     }
   },

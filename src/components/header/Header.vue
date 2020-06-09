@@ -68,7 +68,6 @@
           class="ml-5"
           v-model="search"
           append-icon="search"
-          :rules="search !== '' ? validation.format : []"
           @keypress="fetchWeather"
           :label="$t('app.header.search')"
           single-line
@@ -121,8 +120,6 @@ export default {
   },
   data () {
     return {
-      city: '',
-      country: '',
       items: [{ id: 'fav', title: 'favorites' }, { id: 'settings', title: 'settings' }],
       search: '',
       isValid: false,
@@ -151,13 +148,9 @@ export default {
       this.$store.commit('weather/errorOccured', false)
     },
     fetchWeather (event) {
-      if (event.key === 'Enter' && this.isValid) { //   form is valid and user press Enter to search
-        if (this.search.split(',').length === 2) {
-          this.city = this.search.split(',')[0].trim()
-          this.country = this.search.split(',')[1].trim()
-          this.$store.dispatch('weather/fetchWeather', { country: this.country, city: this.city })
-          this.search = ''
-        }
+      if (event.key === 'Enter') {
+        this.$store.dispatch('weather/fetchWeather', this.search)
+        this.search = ''
       }
     },
     addToFavoriteList (event) {
@@ -168,11 +161,12 @@ export default {
     },
     convertTemperature ($event) {
       this.settingsPopup = false
+      localStorage.setItem('tempUnit', $event)
       this.$store.commit('weather/setUnitTemp', $event)
     },
     applyFavoriteCity ($event) {
       this.favPopup = false
-      this.$store.dispatch('weather/fetchWeather', { country: null, city: $event })
+      this.$store.dispatch('weather/fetchWeather', $event)
     },
     chooseMenu (idItem) {
       switch (idItem) {

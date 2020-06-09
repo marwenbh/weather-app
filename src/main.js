@@ -26,7 +26,7 @@ Vue.use(VueMoment, { moment })
 Vue.config.productionTip = false
 
 const i18n = new VueI18n({
-  locale: 'en',
+  locale: localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en',
   messages: lang
 })
 

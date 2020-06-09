@@ -5,10 +5,11 @@
         "actions": {
             "confirm": "confirm",
             "cancel": "cancel",
-            "close": "close"
+            "close": "close",
+            "backToHome": "Back to home"
         },
         "header": {
-            "search": "city, country",
+            "search": "search by city",
             "currentLocation": "Use current location",
             "settings": {
                 "settings": "Settings",
@@ -36,7 +37,7 @@
             },
             "errorMsg" : {
                 "title" : "Error",
-                "message": "An error was occured, please verify the city and the country values"
+                "message": "An error was occured, please verify the city value"
             }
         },
         "currentTemp": {

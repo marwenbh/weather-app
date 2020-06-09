@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Weather from '../pages/Weather.page.vue'
+import PageNotFound from '../components/shared/PageNotFound.page.vue'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,9 @@ const routes = [
     path: '/weather',
     name: 'Weather',
     component: Weather
+  },
+  {
+    path: '*', name: 'PageNotFound', component: PageNotFound
   }
 ]
 

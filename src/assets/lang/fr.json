@@ -5,10 +5,11 @@
         "actions": {
             "confirm": "Confirmer",
             "cancel": "Annuler",
-            "close": "fermer"
+            "close": "fermer",
+            "backToHome": "Retour à l'acceuil"
         },
         "header": {
-            "search": "ville, pays",
+            "search": "recherche par ville",
             "currentLocation": "Position actuelle",
             "settings": {
                 "settings": "Paramètres",
@@ -36,7 +37,7 @@
             },
             "errorMsg": {
                 "title" : "Erreur",
-                "message": "Une erreur est survenue, veuillez vérifier la ville et le pays"
+                "message": "Une erreur est survenue, veuillez vérifier la ville saisie"
             }
         },
         "currentTemp": {

@@ -13,7 +13,7 @@
         class="primary lighten-2 py-4 text-center white--text"
         cols="12"
       >
-       {{ new Date().getFullYear() }} — <strong> {{ $t('app.title') }} </strong>
+       {{ currentYear }} — <strong> {{ $t('app.title') }} </strong>
 
       <v-tooltip top
         v-for="(icon, index) in icons"
@@ -48,6 +48,11 @@ export default {
       { img: 'mdi-instagram', value: 'Instagram', path: 'https://www.linkedin.com/in/marwen-ben-hamada-642b71133/' }
     ]
   }),
+  computed: {
+    currentYear () {
+      return new Date().getFullYear()
+    }
+  },
   methods: {
     redirect (url) {
       window.open(url, '_blank')
